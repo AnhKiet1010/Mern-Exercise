@@ -25,8 +25,7 @@ class Book extends Component {
       axios
         .get("/book")
         .then(res => {
-          res.data ? 
-          this.setState({book: res.data}) : this.setState({book: []})
+          this.setState({book: res.data})
         })
         .catch(function(error) {
           console.log(error);

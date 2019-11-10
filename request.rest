@@ -1,0 +1,15 @@
+GET http://localhost:5000/getHello
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username": "anhkiet4",
+    "password": "123"
+}
+
+###
+
+GET http://localhost:5000/book

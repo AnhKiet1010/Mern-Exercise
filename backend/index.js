@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-mongoose.connect('mongodb://localhost/User',{ useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true });
 mongoose.connection.once('open', function() {
     console.log("-----------data ok!------------");
   });

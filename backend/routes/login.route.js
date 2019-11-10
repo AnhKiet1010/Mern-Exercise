@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 
@@ -19,7 +21,7 @@ router.post('/', async (req,res,next) => {
         res.json({message: 'pass wrong!'});
         return;
     }
-    const token = jwt.sign({ten: 'anhkiet'},'anhkiet',{algorithm: 'HS256',expiresIn: '3H'});
+    const token = jwt.sign(user,process.env.SECRET_TOKEN,{algorithm: 'HS256',expiresIn: '3H'});
     res.cookie('access_token', token, { httpOnly: true });
     res.json({
         access_token: token
